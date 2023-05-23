@@ -6,7 +6,7 @@ using NuGet.Protocol.Core.Types;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-string connectionString = builder.Configuration.GetConnectionString("Postgres");
+string connectionString = builder.Configuration.GetConnectionString("PostgresEC2");
 builder.Services.AddTransient<RepositoryDepartamento>();
 builder.Services.AddDbContext<DepartamentoContext>(options => options.UseNpgsql(connectionString));
 
